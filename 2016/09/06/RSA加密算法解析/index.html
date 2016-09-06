@@ -98,7 +98,7 @@ n=p*q   （p、q为2个大质数） n的二进制所占用的位数即秘钥的�
 RSA算法三个参数：n、e1、e2
 公式算法介绍：
 n=p*q   （p、q为2个大质数） n的二进制所占用的位数即秘钥的长度">
-<meta property="og:updated_time" content="2016-09-06T10:44:09.235Z">
+<meta property="og:updated_time" content="2016-09-06T10:47:39.927Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RSA加密算法解析">
 <meta name="twitter:description" content="RSA加密算法属于公钥加密算法，是一种非对称密码算法，所谓非对称，就是一个密码用来加密，另一个密码用来解密，一般来说，用公钥加密，私钥解密。
@@ -363,6 +363,7 @@ n=p*q   （p、q为2个大质数） n的二进制所占用的位数即秘钥的�
 <p>(n,e1),(n,e2)就是密钥对，其中(n,e1)为公钥，(n,e2)为私钥。</p>
 <p>RSA算法加解密完全相同：</p>
 <p>A:明文<br>B:密文</p>
+<a id="more"></a>
 <p>——用公钥加密——<br>A=B^e2 mod n      #解密<br>B=A^e1 mod n      #加密</p>
 <p>——用私钥加密——<br>A=B^e1 mod n<br>B=A^e2 mod n</p>
 <h4 id="实例演示"><a href="#实例演示" class="headerlink" title="实例演示"></a>实例演示</h4><p>这是一个公钥加密，公钥解密的RSA演示程序</p>

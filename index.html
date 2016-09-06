@@ -344,8 +344,7 @@
 
       
         
-          
-            <p>RSA加密算法属于公钥加密算法，是一种非对称密码算法，所谓非对称，就是一个密码用来加密，另一个密码用来解密，一般来说，用公钥加密，私钥解密。</p>
+          <p>RSA加密算法属于公钥加密算法，是一种非对称密码算法，所谓非对称，就是一个密码用来加密，另一个密码用来解密，一般来说，用公钥加密，私钥解密。</p>
 <h4 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h4><p>RSA算法基于一个事实：将两个大素数相乘十分容易，但是想要对其乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥。</p>
 <p>RSA算法三个参数：n、e1、e2</p>
 <p>公式算法介绍：</p>
@@ -354,16 +353,11 @@
 <p>(n,e1),(n,e2)就是密钥对，其中(n,e1)为公钥，(n,e2)为私钥。</p>
 <p>RSA算法加解密完全相同：</p>
 <p>A:明文<br>B:密文</p>
-<p>——用公钥加密——<br>A=B^e2 mod n      #解密<br>B=A^e1 mod n      #加密</p>
-<p>——用私钥加密——<br>A=B^e1 mod n<br>B=A^e2 mod n</p>
-<h4 id="实例演示"><a href="#实例演示" class="headerlink" title="实例演示"></a>实例演示</h4><p>这是一个公钥加密，公钥解密的RSA演示程序</p>
-<p>公式：公钥加密<br>A:明文<br>B:密文</p>
-<p>A=B^e2 mod n<br>B=A^e1 mod n<br>本题中: 920139713为n,19为e1</p>
-<h4 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">import string</div><div class="line">strs=string.digits+string.lowercase    <span class="comment">#列举a-z数字</span></div><div class="line"></div><div class="line">f=open(<span class="string">"data.txt"</span>)</div><div class="line">data=f.readlines()</div><div class="line">f.close()</div><div class="line"></div><div class="line"></div><div class="line">plaintext=<span class="string">""</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> b <span class="keyword">in</span> data:    <span class="comment">#取出所有密文(b)</span></div><div class="line">    <span class="keyword">for</span> a <span class="keyword">in</span> strs:   <span class="comment">#取出所有可能的明文(a)</span></div><div class="line">        <span class="keyword">if</span> ord(a)**19 % 920139713==int(b.strip()):         <span class="comment">#ord   将字符串转换为ascii码</span></div><div class="line">            plaintext+=a</div><div class="line"></div><div class="line"><span class="built_in">print</span> plaintext</div></pre></td></tr></table></figure>
-<p>{920139713,19}   #公钥，其中920139713为n   19为e1</p>
-<p>704796792        #密文  B<br>752211152<br>274704164<br>18414022<br>368270835<br>483295235<br>263072905<br>459788476<br>483295235<br>459788476<br>663551792<br>475206804<br>459788476<br>428313374<br>475206804<br>459788476<br>425392137<br>704796792<br>458265677<br>341524652<br>483295235<br>534149509<br>425392137<br>428313374<br>425392137<br>341524652<br>458265677<br>263072905<br>483295235<br>828509797<br>341524652<br>425392137<br>475206804<br>428313374<br>483295235<br>475206804<br>459788476<br>306220148</p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/06/RSA加密算法解析/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
