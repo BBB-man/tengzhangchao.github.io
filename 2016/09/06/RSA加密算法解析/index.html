@@ -84,28 +84,22 @@
 
 
 
-<meta name="description" content="RSA加密算法属于公钥加密算法，是一种非对称密码算法，所谓非对称，就是一个密码用来加密，另一个密码用来解密，一般来说，用公钥加密，私钥解密。
-算法原理RSA算法基于一个事实：将两个大素数相乘十分容易，但是想要对其乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥。
-RSA算法三个参数：n、e1、e2
-公式算法介绍：
-n=p*q   （p、q为2个大质数） n的二进制所占用的位数即秘钥的长度">
+<meta name="description" content="几个月前参加了一次CTF比赛，其中遇到了RSA加密解密题，当时也是一头雾水，赛后便查找资料整理了一番，在此总结分享。
+算法介绍RSA加密算法属于公钥加密算法，是一种非对称密码算法，所谓非对称，就是一个密码用来加密，另一个密码用来解密，一般来说，用公钥加密，私钥解密，当然也有其他情况。
+算法原理RSA算法基于一个事实：将两个大素数相乘十分容易，但是想要对其乘积进行因式分解却极其困难，因此可以将乘积公">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RSA加密算法解析">
 <meta property="og:url" content="http://thief.one/2016/09/06/RSA加密算法解析/index.html">
 <meta property="og:site_name" content="One Thief">
-<meta property="og:description" content="RSA加密算法属于公钥加密算法，是一种非对称密码算法，所谓非对称，就是一个密码用来加密，另一个密码用来解密，一般来说，用公钥加密，私钥解密。
-算法原理RSA算法基于一个事实：将两个大素数相乘十分容易，但是想要对其乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥。
-RSA算法三个参数：n、e1、e2
-公式算法介绍：
-n=p*q   （p、q为2个大质数） n的二进制所占用的位数即秘钥的长度">
-<meta property="og:updated_time" content="2016-09-06T10:47:39.927Z">
+<meta property="og:description" content="几个月前参加了一次CTF比赛，其中遇到了RSA加密解密题，当时也是一头雾水，赛后便查找资料整理了一番，在此总结分享。
+算法介绍RSA加密算法属于公钥加密算法，是一种非对称密码算法，所谓非对称，就是一个密码用来加密，另一个密码用来解密，一般来说，用公钥加密，私钥解密，当然也有其他情况。
+算法原理RSA算法基于一个事实：将两个大素数相乘十分容易，但是想要对其乘积进行因式分解却极其困难，因此可以将乘积公">
+<meta property="og:updated_time" content="2016-09-07T01:13:51.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RSA加密算法解析">
-<meta name="twitter:description" content="RSA加密算法属于公钥加密算法，是一种非对称密码算法，所谓非对称，就是一个密码用来加密，另一个密码用来解密，一般来说，用公钥加密，私钥解密。
-算法原理RSA算法基于一个事实：将两个大素数相乘十分容易，但是想要对其乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥。
-RSA算法三个参数：n、e1、e2
-公式算法介绍：
-n=p*q   （p、q为2个大质数） n的二进制所占用的位数即秘钥的长度">
+<meta name="twitter:description" content="几个月前参加了一次CTF比赛，其中遇到了RSA加密解密题，当时也是一头雾水，赛后便查找资料整理了一番，在此总结分享。
+算法介绍RSA加密算法属于公钥加密算法，是一种非对称密码算法，所谓非对称，就是一个密码用来加密，另一个密码用来解密，一般来说，用公钥加密，私钥解密，当然也有其他情况。
+算法原理RSA算法基于一个事实：将两个大素数相乘十分容易，但是想要对其乘积进行因式分解却极其困难，因此可以将乘积公">
 
 
 
@@ -354,24 +348,17 @@ n=p*q   （p、q为2个大质数） n的二进制所占用的位数即秘钥的�
       
 
       
-        <p>RSA加密算法属于公钥加密算法，是一种非对称密码算法，所谓非对称，就是一个密码用来加密，另一个密码用来解密，一般来说，用公钥加密，私钥解密。</p>
-<h4 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h4><p>RSA算法基于一个事实：将两个大素数相乘十分容易，但是想要对其乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥。</p>
-<p>RSA算法三个参数：n、e1、e2</p>
-<p>公式算法介绍：</p>
-<p>n=p*q   （p、q为2个大质数） n的二进制所占用的位数即秘钥的长度。</p>
-<p>e1与e2是一对相关的值，e1可以任意取，但要求e1与(p-1)<em>(q-1)互质；要求(e2</em>e1)mod((p-1)*(q-1))=1.</p>
-<p>(n,e1),(n,e2)就是密钥对，其中(n,e1)为公钥，(n,e2)为私钥。</p>
-<p>RSA算法加解密完全相同：</p>
-<p>A:明文<br>B:密文</p>
-<a id="more"></a>
-<p>——用公钥加密——<br>A=B^e2 mod n      #解密<br>B=A^e1 mod n      #加密</p>
-<p>——用私钥加密——<br>A=B^e1 mod n<br>B=A^e2 mod n</p>
-<h4 id="实例演示"><a href="#实例演示" class="headerlink" title="实例演示"></a>实例演示</h4><p>这是一个公钥加密，公钥解密的RSA演示程序</p>
-<p>公式：公钥加密<br>A:明文<br>B:密文</p>
-<p>A=B^e2 mod n<br>B=A^e1 mod n<br>本题中: 920139713为n,19为e1</p>
-<h4 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">import string</div><div class="line">strs=string.digits+string.lowercase    <span class="comment">#列举a-z数字</span></div><div class="line"></div><div class="line">f=open(<span class="string">"data.txt"</span>)</div><div class="line">data=f.readlines()</div><div class="line">f.close()</div><div class="line"></div><div class="line"></div><div class="line">plaintext=<span class="string">""</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> b <span class="keyword">in</span> data:    <span class="comment">#取出所有密文(b)</span></div><div class="line">    <span class="keyword">for</span> a <span class="keyword">in</span> strs:   <span class="comment">#取出所有可能的明文(a)</span></div><div class="line">        <span class="keyword">if</span> ord(a)**19 % 920139713==int(b.strip()):         <span class="comment">#ord   将字符串转换为ascii码</span></div><div class="line">            plaintext+=a</div><div class="line"></div><div class="line"><span class="built_in">print</span> plaintext</div></pre></td></tr></table></figure>
-<p>{920139713,19}   #公钥，其中920139713为n   19为e1</p>
-<p>704796792        #密文  B<br>752211152<br>274704164<br>18414022<br>368270835<br>483295235<br>263072905<br>459788476<br>483295235<br>459788476<br>663551792<br>475206804<br>459788476<br>428313374<br>475206804<br>459788476<br>425392137<br>704796792<br>458265677<br>341524652<br>483295235<br>534149509<br>425392137<br>428313374<br>425392137<br>341524652<br>458265677<br>263072905<br>483295235<br>828509797<br>341524652<br>425392137<br>475206804<br>428313374<br>483295235<br>475206804<br>459788476<br>306220148</p>
+        <p>几个月前参加了一次CTF比赛，其中遇到了RSA加密解密题，当时也是一头雾水，赛后便查找资料整理了一番，在此总结分享。</p>
+<h4 id="算法介绍"><a href="#算法介绍" class="headerlink" title="算法介绍"></a>算法介绍</h4><p>RSA加密算法属于公钥加密算法，是一种非对称密码算法，所谓非对称，就是一个密码用来加密，另一个密码用来解密，一般来说，用公钥加密，私钥解密，当然也有其他情况。</p>
+<h4 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h4><p>RSA算法基于一个事实：将两个大素数相乘十分容易，但是想要对其乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥。RSA算法三个参数：n、e1、e2<br><a id="more"></a><br>n=p<em>q   （p、q为2个大质数） n的二进制所占用的位数即秘钥的长度。<br>e1与e2是一对相关的值，e1可以任意取，但要求e1与(p-1)</em>(q-1)互质；要求(e2<em>e1)mod((p-1)</em>(q-1))=1。<br>(n,e1),(n,e2)就是密钥对，其中(n,e1)为公钥，(n,e2)为私钥。</p>
+<h4 id="算法公式"><a href="#算法公式" class="headerlink" title="算法公式"></a>算法公式</h4><p>假设：<br>A:明文<br>B:密文</p>
+<p>——用公钥加密公式——<br>A=B^e2 mod n<br>B=A^e1 mod n      </p>
+<p>——用私钥加密公式——<br>A=B^e1 mod n<br>B=A^e2 mod n</p>
+<h4 id="实战演示"><a href="#实战演示" class="headerlink" title="实战演示"></a>实战演示</h4><h5 id="题目概要"><a href="#题目概要" class="headerlink" title="题目概要"></a>题目概要</h5><p>这是一个公钥加密，公钥解密的RSA题目<br>给出公钥密码为：{920139713,19}，其中920139713为n，19为e1。<br>待解密的密文B为：<br>704796792<br>752211152<br>274704164<br>18414022<br>368270835<br>483295235<br>263072905<br>459788476<br>483295235<br>459788476<br>……<br>最终求解私钥A的值？</p>
+<h5 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h5><p>列出公式：公钥加密<br>假设：<br>A:明文<br>B:密文<br>A=B^e2 mod n<br>B=A^e1 mod n</p>
+<p>此题给出了B,n,e1,求A的值，带入公式2即可求解。</p>
+<h5 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">import string</div><div class="line">strs=string.digits+string.lowercase    <span class="comment">#列举a-z数字</span></div><div class="line"></div><div class="line">f=open(<span class="string">"data.txt"</span>)   <span class="comment">#把密文B的内容写进data.txt，方便程序读取</span></div><div class="line">data=f.readlines()</div><div class="line">f.close()</div><div class="line"></div><div class="line">plaintext=<span class="string">""</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> b <span class="keyword">in</span> data:    <span class="comment">#取出所有密文(b)</span></div><div class="line">	<span class="keyword">for</span> a <span class="keyword">in</span> strs:   <span class="comment">#取出所有可能的明文(a)</span></div><div class="line">		<span class="keyword">if</span> ord(a)**19 % 920139713==int(b.strip()):         <span class="comment">#ord   将字符串转换为ascii码</span></div><div class="line">			plaintext+=a</div><div class="line"></div><div class="line"><span class="built_in">print</span> plaintext</div></pre></td></tr></table></figure>
+<h5 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h5><p>flag13212je2ue28fy71w8u87y31r78eu1e2</p>
 
       
     </div>
@@ -423,25 +410,6 @@ n=p*q   （p、q为2个大质数） n的二进制所占用的位数即秘钥的�
 
 
     <div class="post-spread">
-      
-        <div class="ds-share flat" data-thread-key="2016/09/06/RSA加密算法解析/"
-     data-title="RSA加密算法解析"
-     data-content=""
-     data-url="http://thief.one/2016/09/06/RSA加密算法解析/">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
-
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
       
     </div>
   </div>
@@ -557,7 +525,7 @@ n=p*q   （p、q为2个大质数） n的二进制所占用的位数即秘钥的�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法原理"><span class="nav-number">1.</span> <span class="nav-text">算法原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例演示"><span class="nav-number">2.</span> <span class="nav-text">实例演示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码展示"><span class="nav-number">3.</span> <span class="nav-text">代码展示</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#算法介绍"><span class="nav-number">1.</span> <span class="nav-text">算法介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法原理"><span class="nav-number">2.</span> <span class="nav-text">算法原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法公式"><span class="nav-number">3.</span> <span class="nav-text">算法公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实战演示"><span class="nav-number">4.</span> <span class="nav-text">实战演示</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#题目概要"><span class="nav-number">4.1.</span> <span class="nav-text">题目概要</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解题思路"><span class="nav-number">4.2.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#编写代码"><span class="nav-number">4.3.</span> <span class="nav-text">编写代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#运行结果"><span class="nav-number">4.4.</span> <span class="nav-text">运行结果</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
