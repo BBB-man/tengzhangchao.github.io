@@ -275,6 +275,144 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/14/基于Python的WebServer/" itemprop="url">
+                  基于Python的WebServer
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-14T15:12:39+08:00" content="2016-09-14">
+              2016-09-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/安全工具/" itemprop="url" rel="index">
+                    <span itemprop="name">安全工具</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/14/基于Python的WebServer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/14/基于Python的WebServer/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>WebServer的主要功能是用来运行代码，处理http请求等服务，比如常见的Apache，IIS，Nginx等都可以用来解析代码，处理请求。<br>以上几种容器（中间件）功能强大，但是安装配置比较麻烦，对于像我这样的菜鸟来说，搭建一个web服务器可能要花几天时间，而我们搭建web服务器更多时候并不是专门为了处理大规模的请求，更多的只是为了测试使用，此时一个方便速成的WebServer就至关重要。</p>
+<h3 id="python-WebServer编程介绍"><a href="#python-WebServer编程介绍" class="headerlink" title="python WebServer编程介绍"></a>python WebServer编程介绍</h3><ul>
+<li>BaseHTTPServer: 提供基本的Web服务和处理器类，分别是HTTPServer和BaseHTTPRequestHandler。</li>
+<li>SimpleHTTPServer: 包含执行GET和HEAD请求的SimpleHTTPRequestHandler类。</li>
+<li>CGIHTTPServer: 包含处理POST请求和执行CGIHTTPRequestHandler类</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">python -m SimpleHTTPServer 8000</div><div class="line"></div><div class="line">`</div></pre></td></tr></table></figure>
+<p>此时，打开浏览器，访问localhost:8000端口即可。</p>
+<h3 id="PyWebServer介绍"><a href="#PyWebServer介绍" class="headerlink" title="PyWebServer介绍"></a>PyWebServer介绍</h3><p>由于用python搭建一个简易的WebServer十分方便，因此我便写一个简单的启动器，类似于SimpleHTTPServer。</p>
+<p>为了方便没有安装python环境的windows机子启动，用pyinstaller工具将py程序打包成了exe可执行程序。</p>
+<h4 id="Linux下运行代码"><a href="#Linux下运行代码" class="headerlink" title="Linux下运行代码"></a>Linux下运行代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">python PyWebServer.py -h</div><div class="line"></div><div class="line">python PyWebServer.py -i 10.0.0.1 -p 8888   <span class="comment">##指定ip与端口,默认为8888</span></div></pre></td></tr></table></figure>
+<h4 id="windows下运行代码"><a href="#windows下运行代码" class="headerlink" title="windows下运行代码"></a>windows下运行代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">PyWebServer.exe -h  </div><div class="line"></div><div class="line">PyWebServer.exe -p 8888      <span class="comment">##指定端口,默认为8888</span></div></pre></td></tr></table></figure>
+<p>运行完以后,可以在其他机子上访问，进行文件下载等操作！</p>
+<h3 id="PyWebServer功能"><a href="#PyWebServer功能" class="headerlink" title="PyWebServer功能"></a>PyWebServer功能</h3><p>功能可以自由想象发挥，比如说：</p>
+<ul>
+<li>可以在服务器上运行程序，解析一段精心构造的py代码，远程执行系统命令。（如不在同一网段，需要转发端口）</li>
+<li>可以在服务器上运行程序，用来替代FTP等工具，下载服务器上的文件（当服务器是linux时，使用比较方便）<br>……</li>
+</ul>
+<h3 id="PyWebServer下载"><a href="#PyWebServer下载" class="headerlink" title="PyWebServer下载"></a>PyWebServer下载</h3><p><a href="https://github.com/tengzhangchao/PyWebServer" target="_blank" rel="external">下载地址</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/06/RSA加密算法解析/" itemprop="url">
                   RSA加密算法解析
                 </a>
@@ -783,7 +921,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -800,7 +938,7 @@
           
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
