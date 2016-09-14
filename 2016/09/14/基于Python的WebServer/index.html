@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="python,tools," />
+  <meta name="keywords" content="tools," />
 
 
 
@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="WebServer的主要功能是用来运行代码，处理http请求等服务，比如常见的Apache，IIS，Nginx等都可以用来解析代码，处理请求。以上几种容器（中间件）功能强大，但是安装配置比较麻烦，对于像我这样的菜鸟来说，搭建一个web服务器可能要花几天时间，而我们搭建web服务器更多时候并不是专门为了处理大规模的请求，更多的只是为了测试使用，此时一个方便速成的WebServer就至关重要。
-pyt">
+<meta name="description" content="WebServer的主要功能是用来运行代码，处理http请求等服务，比如常见的Apache，IIS，Nginx等都可以用来解析代码，处理请求。以上几种容器（中间件）功能强大，但是安装配置比较麻烦，对于像我这样的菜鸟来说，搭建一个web服务器可能要花几天时间。如果我们搭建web服务器并不是专门为了处理大规模的请求，而只是为了测试使用，那么一个方便速成的WebServer就至关重要了。
+Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于Python的WebServer">
 <meta property="og:url" content="http://thief.one/2016/09/14/基于Python的WebServer/index.html">
 <meta property="og:site_name" content="One Thief">
-<meta property="og:description" content="WebServer的主要功能是用来运行代码，处理http请求等服务，比如常见的Apache，IIS，Nginx等都可以用来解析代码，处理请求。以上几种容器（中间件）功能强大，但是安装配置比较麻烦，对于像我这样的菜鸟来说，搭建一个web服务器可能要花几天时间，而我们搭建web服务器更多时候并不是专门为了处理大规模的请求，更多的只是为了测试使用，此时一个方便速成的WebServer就至关重要。
-pyt">
-<meta property="og:updated_time" content="2016-09-14T07:38:18.699Z">
+<meta property="og:description" content="WebServer的主要功能是用来运行代码，处理http请求等服务，比如常见的Apache，IIS，Nginx等都可以用来解析代码，处理请求。以上几种容器（中间件）功能强大，但是安装配置比较麻烦，对于像我这样的菜鸟来说，搭建一个web服务器可能要花几天时间。如果我们搭建web服务器并不是专门为了处理大规模的请求，而只是为了测试使用，那么一个方便速成的WebServer就至关重要了。
+Python">
+<meta property="og:updated_time" content="2016-09-14T07:49:31.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Python的WebServer">
-<meta name="twitter:description" content="WebServer的主要功能是用来运行代码，处理http请求等服务，比如常见的Apache，IIS，Nginx等都可以用来解析代码，处理请求。以上几种容器（中间件）功能强大，但是安装配置比较麻烦，对于像我这样的菜鸟来说，搭建一个web服务器可能要花几天时间，而我们搭建web服务器更多时候并不是专门为了处理大规模的请求，更多的只是为了测试使用，此时一个方便速成的WebServer就至关重要。
-pyt">
+<meta name="twitter:description" content="WebServer的主要功能是用来运行代码，处理http请求等服务，比如常见的Apache，IIS，Nginx等都可以用来解析代码，处理请求。以上几种容器（中间件）功能强大，但是安装配置比较麻烦，对于像我这样的菜鸟来说，搭建一个web服务器可能要花几天时间。如果我们搭建web服务器并不是专门为了处理大规模的请求，而只是为了测试使用，那么一个方便速成的WebServer就至关重要了。
+Python">
 
 
 
@@ -345,25 +345,25 @@ pyt">
       
 
       
-        <p>WebServer的主要功能是用来运行代码，处理http请求等服务，比如常见的Apache，IIS，Nginx等都可以用来解析代码，处理请求。<br>以上几种容器（中间件）功能强大，但是安装配置比较麻烦，对于像我这样的菜鸟来说，搭建一个web服务器可能要花几天时间，而我们搭建web服务器更多时候并不是专门为了处理大规模的请求，更多的只是为了测试使用，此时一个方便速成的WebServer就至关重要。</p>
-<h3 id="python-WebServer编程介绍"><a href="#python-WebServer编程介绍" class="headerlink" title="python WebServer编程介绍"></a>python WebServer编程介绍</h3><ul>
+        <p>WebServer的主要功能是用来运行代码，处理http请求等服务，比如常见的Apache，IIS，Nginx等都可以用来解析代码，处理请求。以上几种容器（中间件）功能强大，但是安装配置比较麻烦，对于像我这样的菜鸟来说，搭建一个web服务器可能要花几天时间。如果我们搭建web服务器并不是专门为了处理大规模的请求，而只是为了测试使用，那么一个方便速成的WebServer就至关重要了。</p>
+<h4 id="Python-WebServer编程介绍"><a href="#Python-WebServer编程介绍" class="headerlink" title="Python WebServer编程介绍"></a>Python WebServer编程介绍</h4><ul>
 <li>BaseHTTPServer: 提供基本的Web服务和处理器类，分别是HTTPServer和BaseHTTPRequestHandler。</li>
 <li>SimpleHTTPServer: 包含执行GET和HEAD请求的SimpleHTTPRequestHandler类。</li>
 <li>CGIHTTPServer: 包含处理POST请求和执行CGIHTTPRequestHandler类</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">python -m SimpleHTTPServer 8000</div><div class="line"></div><div class="line">`</div></pre></td></tr></table></figure>
-<p>此时，打开浏览器，访问localhost:8000端口即可。</p>
-<h3 id="PyWebServer介绍"><a href="#PyWebServer介绍" class="headerlink" title="PyWebServer介绍"></a>PyWebServer介绍</h3><p>由于用python搭建一个简易的WebServer十分方便，因此我便写一个简单的启动器，类似于SimpleHTTPServer。</p>
-<p>为了方便没有安装python环境的windows机子启动，用pyinstaller工具将py程序打包成了exe可执行程序。</p>
-<h4 id="Linux下运行代码"><a href="#Linux下运行代码" class="headerlink" title="Linux下运行代码"></a>Linux下运行代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">python PyWebServer.py -h</div><div class="line"></div><div class="line">python PyWebServer.py -i 10.0.0.1 -p 8888   <span class="comment">##指定ip与端口,默认为8888</span></div></pre></td></tr></table></figure>
-<h4 id="windows下运行代码"><a href="#windows下运行代码" class="headerlink" title="windows下运行代码"></a>windows下运行代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">PyWebServer.exe -h  </div><div class="line"></div><div class="line">PyWebServer.exe -p 8888      <span class="comment">##指定端口,默认为8888</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python -m SimpleHTTPServer 8000</div></pre></td></tr></table></figure>
+<p>python内置很多好用的库，此时打开浏览器，访问localhost:8000端口即可。</p>
+<h4 id="PyWebServer介绍"><a href="#PyWebServer介绍" class="headerlink" title="PyWebServer介绍"></a>PyWebServer介绍</h4><p>由于用python搭建一个简易的WebServer十分方便，因此我便写一个简单的启动器，类似于SimpleHTTPServer。为了方便没有安装python环境的windows机子启动，用pyinstaller工具将py程序打包成了exe可执行程序。</p>
+<h5 id="Linux下运行代码"><a href="#Linux下运行代码" class="headerlink" title="Linux下运行代码"></a>Linux下运行代码</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">python PyWebServer.py -h</div><div class="line">python PyWebServer.py -i 10.0.0.1 -p 8888   <span class="comment">##指定ip与端口,默认为8888</span></div></pre></td></tr></table></figure>
+<h5 id="windows下运行代码"><a href="#windows下运行代码" class="headerlink" title="windows下运行代码"></a>windows下运行代码</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">PyWebServer.exe -h  </div><div class="line">PyWebServer.exe -p 8888      <span class="comment">##指定端口,默认为8888</span></div></pre></td></tr></table></figure>
 <p>运行完以后,可以在其他机子上访问，进行文件下载等操作！</p>
-<h3 id="PyWebServer功能"><a href="#PyWebServer功能" class="headerlink" title="PyWebServer功能"></a>PyWebServer功能</h3><p>功能可以自由想象发挥，比如说：</p>
+<h4 id="PyWebServer功能"><a href="#PyWebServer功能" class="headerlink" title="PyWebServer功能"></a>PyWebServer功能</h4><p>功能可以自由想象发挥，比如说：</p>
 <ul>
 <li>可以在服务器上运行程序，解析一段精心构造的py代码，远程执行系统命令。（如不在同一网段，需要转发端口）</li>
 <li>可以在服务器上运行程序，用来替代FTP等工具，下载服务器上的文件（当服务器是linux时，使用比较方便）<br>……</li>
 </ul>
-<h3 id="PyWebServer下载"><a href="#PyWebServer下载" class="headerlink" title="PyWebServer下载"></a>PyWebServer下载</h3><p><a href="https://github.com/tengzhangchao/PyWebServer" target="_blank" rel="external">下载地址</a></p>
+<h4 id="工具下载"><a href="#工具下载" class="headerlink" title="工具下载"></a>工具下载</h4><p>PyWebServer     <a href="https://github.com/tengzhangchao/PyWebServer" target="_blank" rel="external">下载地址</a></p>
 
       
     </div>
@@ -386,7 +386,7 @@ pyt">
       
         <div class="post-tags">
           
-            <a href="/tags/python-tools/" rel="tag">#python,tools</a>
+            <a href="/tags/tools/" rel="tag">#tools</a>
           
         </div>
       
@@ -549,7 +549,7 @@ pyt">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#python-WebServer编程介绍"><span class="nav-number">1.</span> <span class="nav-text">python WebServer编程介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PyWebServer介绍"><span class="nav-number">2.</span> <span class="nav-text">PyWebServer介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux下运行代码"><span class="nav-number">2.1.</span> <span class="nav-text">Linux下运行代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#windows下运行代码"><span class="nav-number">2.2.</span> <span class="nav-text">windows下运行代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PyWebServer功能"><span class="nav-number">3.</span> <span class="nav-text">PyWebServer功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PyWebServer下载"><span class="nav-number">4.</span> <span class="nav-text">PyWebServer下载</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-WebServer编程介绍"><span class="nav-number">1.</span> <span class="nav-text">Python WebServer编程介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PyWebServer介绍"><span class="nav-number">2.</span> <span class="nav-text">PyWebServer介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Linux下运行代码"><span class="nav-number">2.1.</span> <span class="nav-text">Linux下运行代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#windows下运行代码"><span class="nav-number">2.2.</span> <span class="nav-text">windows下运行代码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PyWebServer功能"><span class="nav-number">3.</span> <span class="nav-text">PyWebServer功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工具下载"><span class="nav-number">4.</span> <span class="nav-text">工具下载</span></a></li></ol></div>
             
           </div>
         </section>

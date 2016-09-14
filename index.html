@@ -344,28 +344,17 @@
 
       
         
-          
-            <p>WebServer的主要功能是用来运行代码，处理http请求等服务，比如常见的Apache，IIS，Nginx等都可以用来解析代码，处理请求。<br>以上几种容器（中间件）功能强大，但是安装配置比较麻烦，对于像我这样的菜鸟来说，搭建一个web服务器可能要花几天时间，而我们搭建web服务器更多时候并不是专门为了处理大规模的请求，更多的只是为了测试使用，此时一个方便速成的WebServer就至关重要。</p>
-<h3 id="python-WebServer编程介绍"><a href="#python-WebServer编程介绍" class="headerlink" title="python WebServer编程介绍"></a>python WebServer编程介绍</h3><ul>
+          <p>WebServer的主要功能是用来运行代码，处理http请求等服务，比如常见的Apache，IIS，Nginx等都可以用来解析代码，处理请求。以上几种容器（中间件）功能强大，但是安装配置比较麻烦，对于像我这样的菜鸟来说，搭建一个web服务器可能要花几天时间。如果我们搭建web服务器并不是专门为了处理大规模的请求，而只是为了测试使用，那么一个方便速成的WebServer就至关重要了。</p>
+<h4 id="Python-WebServer编程介绍"><a href="#Python-WebServer编程介绍" class="headerlink" title="Python WebServer编程介绍"></a>Python WebServer编程介绍</h4><ul>
 <li>BaseHTTPServer: 提供基本的Web服务和处理器类，分别是HTTPServer和BaseHTTPRequestHandler。</li>
 <li>SimpleHTTPServer: 包含执行GET和HEAD请求的SimpleHTTPRequestHandler类。</li>
 <li>CGIHTTPServer: 包含处理POST请求和执行CGIHTTPRequestHandler类</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">python -m SimpleHTTPServer 8000</div><div class="line"></div><div class="line">`</div></pre></td></tr></table></figure>
-<p>此时，打开浏览器，访问localhost:8000端口即可。</p>
-<h3 id="PyWebServer介绍"><a href="#PyWebServer介绍" class="headerlink" title="PyWebServer介绍"></a>PyWebServer介绍</h3><p>由于用python搭建一个简易的WebServer十分方便，因此我便写一个简单的启动器，类似于SimpleHTTPServer。</p>
-<p>为了方便没有安装python环境的windows机子启动，用pyinstaller工具将py程序打包成了exe可执行程序。</p>
-<h4 id="Linux下运行代码"><a href="#Linux下运行代码" class="headerlink" title="Linux下运行代码"></a>Linux下运行代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">python PyWebServer.py -h</div><div class="line"></div><div class="line">python PyWebServer.py -i 10.0.0.1 -p 8888   <span class="comment">##指定ip与端口,默认为8888</span></div></pre></td></tr></table></figure>
-<h4 id="windows下运行代码"><a href="#windows下运行代码" class="headerlink" title="windows下运行代码"></a>windows下运行代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">PyWebServer.exe -h  </div><div class="line"></div><div class="line">PyWebServer.exe -p 8888      <span class="comment">##指定端口,默认为8888</span></div></pre></td></tr></table></figure>
-<p>运行完以后,可以在其他机子上访问，进行文件下载等操作！</p>
-<h3 id="PyWebServer功能"><a href="#PyWebServer功能" class="headerlink" title="PyWebServer功能"></a>PyWebServer功能</h3><p>功能可以自由想象发挥，比如说：</p>
-<ul>
-<li>可以在服务器上运行程序，解析一段精心构造的py代码，远程执行系统命令。（如不在同一网段，需要转发端口）</li>
-<li>可以在服务器上运行程序，用来替代FTP等工具，下载服务器上的文件（当服务器是linux时，使用比较方便）<br>……</li>
-</ul>
-<h3 id="PyWebServer下载"><a href="#PyWebServer下载" class="headerlink" title="PyWebServer下载"></a>PyWebServer下载</h3><p><a href="https://github.com/tengzhangchao/PyWebServer" target="_blank" rel="external">下载地址</a></p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/14/基于Python的WebServer/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -483,8 +472,7 @@
       
         
           <p>几个月前参加了一次CTF比赛，其中遇到了RSA加密解密题，当时也是一头雾水，赛后便查找资料整理了一番，在此总结分享。</p>
-<h4 id="算法介绍"><a href="#算法介绍" class="headerlink" title="算法介绍"></a>算法介绍</h4><p>RSA加密算法属于公钥加密算法，是一种非对称密码算法，所谓非对称，就是一个密码用来加密，另一个密码用来解密，一般来说，用公钥加密，私钥解密，当然也有其他情况。</p>
-<h4 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h4><p>RSA算法基于一个事实：将两个大素数相乘十分容易，但是想要对其乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥。RSA算法三个参数：n、e1、e2<br>
+<h4 id="算法介绍"><a href="#算法介绍" class="headerlink" title="算法介绍"></a>算法介绍</h4><p>RSA加密算法属于公钥加密算法，是一种非对称密码算法，所谓非对称，就是一个密码用来加密，另一个密码用来解密，一般来说，用公钥加密，私钥解密，当然也有其他情况。<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/09/06/RSA加密算法解析/#more" rel="contents">
               阅读全文 &raquo;
